@@ -59,12 +59,14 @@ where `γ` is the **quality exponent** — the number the field's central claims
 on. The motivating question is quantitative: *how much does data quality matter,
 and by how much does it matter more or less than data quantity?*
 
-The form is current and load-bearing. Subramanyam, Chen & Grossman, *"Scaling Laws
-Revited: Modeling the Role of Data Quality in Language Model Pretraining"*
-(ICLR 2026, [arXiv:2510.03313](https://arxiv.org/abs/2510.03313)) introduce `Q`,
-give two practical estimators for it, report fitted exponents of **γ ≈ 0.173**
-(NMT) and **γ ≈ 0.401** (CLM), and validate the law out-of-sample — over 63 runs
-on LLM pretraining.
+The form is current and load-bearing. **The paper this repository audits** is
+Subramanyam, Chen & Grossman, *"Scaling Laws Revisited: Modeling the Role of Data
+Quality in Language Model Pretraining"* (ICLR 2026,
+[arXiv:2510.03313](https://arxiv.org/abs/2510.03313)). It introduces `Q`, gives
+two practical estimators for it, reports fitted exponents of **γ ≈ 0.173** (NMT)
+and **γ ≈ 0.401** (CLM), and validates the law out-of-sample — over 63 runs on
+LLM pretraining. That work is theirs; this repository is an audit of whether the
+exponent is measurable, and no result here is presented as theirs.
 
 **This repository audits whether that number is measurable at that sample size.**
 
@@ -401,11 +403,3 @@ recurs and the tests now guard it:
   opaque *"Default option is not allowed more than '1' time(s)"*. A lambda
   capturing a Python-level name happens to dodge it; nothing here relies on that
   accident, and a source-level test now enforces ASCII in optimiser callables.
-
----
-
-## 11. Citation
-
-Subramanyam, A., Chen, Y., & Grossman, R. L. (2026). *Scaling Laws Revisited:
-Modeling the Role of Data Quality in Language Model Pretraining.* ICLR 2026.
-[arXiv:2510.03313](https://arxiv.org/abs/2510.03313).
