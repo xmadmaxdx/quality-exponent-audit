@@ -1,0 +1,29 @@
+data:
+  dataset: fake
+  root: data
+  image_size: 32
+  batch_size: 32
+  num_workers: 0
+  subset_fit: 400
+quality:
+  operator: label_flip
+  quality: 0.8
+  seed: 0
+model:
+  name: resnet20
+  num_classes: 100
+  width: 8
+train:
+  epochs: 2
+  lr: 0.05
+  weight_decay: 0.0005
+  optimizer: sgd
+  momentum: 0.9
+  seed: 0
+  checkpoint_dir: outputs/runs
+study:
+  name: smoke
+  n_val: 200
+  grid_sizes: [15, 30]
+  min_seeds: 5
+  operators: [label_flip, label_noise, pixel_gaussian]

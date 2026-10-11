@@ -1,0 +1,31 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Anchored with a leading slash on purpose: a bare `data/` also matches the
+# src/data package and silently unpublished it in an earlier project.
+/data/
+/outputs/
+/results/
+*.pt
+*.pth
+*.npy
+*.npz
+
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+credentials.json
+
+# Working notes. Held locally: these carry the audit trail and unreviewed
+# claims, and are deliberately not part of the published artifact.
+GapAnalysis.md
+
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
